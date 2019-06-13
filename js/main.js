@@ -30,7 +30,6 @@ function addZero(n){
   return (parseInt(n, 10) < 10 ? '0' : '') + n;
 }
 
-
 // Set background and greeting
 function setBackGreet(){
   let today = new Date(),
@@ -60,6 +59,17 @@ function setBackGreet(){
   document.body.style.color = 'white';
   }
 }
+
+// Get name from DOM
+function getName(){
+  if(localStorage.getItem('name') === null){
+    name.textContent = '[Enter Your Name]';
+  }
+  else {
+    name.textContent = localStorage.getItem('name');
+  }
+}
 //Run time
 showTime();
 setBackGreet();
+getName();
