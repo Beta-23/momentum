@@ -4,9 +4,11 @@ const time = document.getElementById('time'),
   name = document.getElementById('name'),
   focus = document.getElementById('focus');
 
-// Function Shows Time
+// Options
+const showAmPm = true;
 
-function showTime(){
+// Function Shows Time
+function showTime() {
   let today = new Date(),
     hour = today.getHours(),
     min = today.getMinutes(),
@@ -20,7 +22,7 @@ const amPm = hour >= 12 ? 'PM' : 'AM';
 hour = hour % 12 || 12;
 
 // Output Time
-time.innerHTML = `${hour}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)}`;
+time.innerHTML = `${hour}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)} ${showAmPm ? amPm : ''}`;
 //1000 = 1ms
 setTimeout(showTime, 1000);
 }
@@ -31,7 +33,7 @@ function addZero(n){
 }
 
 // Set background and greeting
-function setBackGreet(){
+function setBackGreet() {
   let today = new Date(),
     hour = today.getHours();
   // Morning
@@ -47,14 +49,13 @@ function setBackGreet(){
 
   }
   // Evening
-  else if (hour <= 18) {
+  else if (hour < 18) {
   document.body.style.backgroundImage = "url('./img/evening.jpg')";
   greeting.textContent = 'Good Evening!';
   document.body.style.color = 'white';
-
   } 
   // Night
-  else if (hour >=20){
+  else if (hour > 20) {
   document.body.style.backgroundImage = "url('./img/night.jpg')";
   greeting.textContent = 'Good Night!';
   document.body.style.color = 'white';
