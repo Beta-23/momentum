@@ -63,7 +63,7 @@ function setBackGreet(){
 
 // Get name from DOM
 function getName(){
-  if(localStorage.getItem('name') === null){
+  if (localStorage.getItem('name') === null){
     name.textContent = '[Enter Your Name]';
   }
   else {
@@ -74,7 +74,7 @@ function getName(){
   // Set Name of User, checks type
 
   function setName(e){
-    if(e.type === 'keypress'){
+    if (e.type === 'keypress'){
       // Check if Enter Key is pressed
       if(e.which == 13 || e.keyCode == 13){
         localStorage.setItem('name', e.target.innerText);
@@ -85,10 +85,9 @@ function getName(){
     }
   }
 
-
   // Get focus from DOM
 function getFocus(){
-  if(localStorage.getItem('focus') === null){
+  if (localStorage.getItem('focus') === null){
     focus.textContent = '[Enter Focus]';
   }
   else {
@@ -96,13 +95,28 @@ function getFocus(){
   }
 }
 
+  // Set Focus for User, checks type
+
+  function setFocus(e){
+    if (e.type === 'keypress'){
+      // Check if Enter Key is pressed
+      if(e.which == 13 || e.keyCode == 13){
+        localStorage.setItem('focus', e.target.innerText);
+        focus.blur();
+      }
+    } else {
+      localStorage.setItem('focus', e.target.innerText);
+    }
+  }
+
 // Event Listener for when users enter name/foucs or clicks away area to update local storage
 name.addEventListener('keypress', setName);
 name.addEventListener('blur', setName);
+focus.addEventListener('keypress', setFocus);
+focus.addEventListener('blur', setFocus);
 
 //Run time
 showTime();
 setBackGreet();
 getName();
 getFocus();
-setName();
