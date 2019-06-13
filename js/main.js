@@ -78,7 +78,7 @@ function getName(){
       // Check if Enter Key is pressed
       if(e.which == 13 || e.keyCode == 13){
         localStorage.setItem('name', e.target.innerText);
-        
+        name.blur();
       }
     } else {
       localStorage.setItem('name', e.target.innerText);
@@ -105,3 +105,4 @@ showTime();
 setBackGreet();
 getName();
 getFocus();
+setName();
