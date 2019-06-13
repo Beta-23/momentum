@@ -38,6 +38,7 @@ function setBackGreet(){
   if (hour < 12) { 
     document.body.style.backgroundImage = "url('./img/morning.jpg')";
     greeting.textContent = 'Good Morning!';
+    document.body.style.color = 'black';
   }  
   // Afternoon
   else if (hour >= 12) {
@@ -69,7 +70,17 @@ function getName(){
     name.textContent = localStorage.getItem('name');
   }
 }
+  // Get focus from DOM
+function getFocus(){
+  if(localStorage.getItem('focus') === null){
+    focus.textContent = '[Enter Focus]';
+  }
+  else {
+    focus.textContent = localStorage.getItem('focus');
+  }
+}
 //Run time
 showTime();
 setBackGreet();
 getName();
+getFocus();
