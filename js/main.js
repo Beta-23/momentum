@@ -38,24 +38,29 @@ function setBackGreet() {
     hour = today.getHours();
   // Morning
   if (hour < 12) { 
-    document.body.style.backgroundImage = "url('./img/morning.jpg')";
+    document.body.style.backgroundSize = "1600px 1050px";
+    document.body.style.backgroundImage = "url('./img/morning2.jpg')";
     greeting.textContent = 'Good Morning!';
     document.body.style.color = 'black';
+
   }  
   // Afternoon
   else if (hour >= 12) {
-  document.body.style.backgroundImage = "url('./img/afternoon.jpg')";
+  document.body.style.backgroundSize = "1600px 1050px";
+  document.body.style.backgroundImage = "url('./img/afternoon2.jpg')";
   greeting.textContent = 'Good Afternoon!';
 
   }
   // Evening
   else if (hour < 18) {
+  document.body.style.backgroundSize = "1600px 1050px";
   document.body.style.backgroundImage = "url('./img/evening.jpg')";
   greeting.textContent = 'Good Evening!';
   document.body.style.color = 'white';
   } 
   // Night
   else if (hour > 20) {
+  document.body.style.backgroundSize = "1600px 1050px";
   document.body.style.backgroundImage = "url('./img/night.jpg')";
   greeting.textContent = 'Good Night!';
   document.body.style.color = 'white';
