@@ -54,7 +54,7 @@ function setBackGreet() {
   // Evening
   else if (hour < 18) {
   document.body.style.backgroundSize = "1600px 1050px";
-  document.body.style.backgroundImage = "url('./img/evening.jpg')";
+  document.body.style.backgroundImage = "url('./img/evening2.jpg')";
   greeting.textContent = 'Good Evening!';
   document.body.style.color = 'white';
   } 
